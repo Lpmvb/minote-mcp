@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.tmp-test-config/
+
+# Local credentials — never commit these
+*.local.json
+config.json
+.env
+.env.*
+
+*.log
+.DS_Store

@@ -1,0 +1,41 @@
+{
+  "name": "minote-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Xiaomi Notes (小米笔记 / i.mi.com) — read, search, create and edit notes from any MCP client",
+  "type": "module",
+  "bin": {
+    "minote-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "login": "tsx src/cli/login.ts",
+    "doctor": "tsx src/cli/doctor.ts",
+    "dump": "tsx src/cli/dump.ts",
+    "selftest": "tsx src/cli/selftest.ts",
+    "test:integration": "tsx test/integration.ts",
+    "test:mcp": "tsx test/mcp-smoke.ts",
+    "test": "npm run selftest && npm run test:integration && npm run test:mcp",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test:live": "tsx test/live.ts",
+    "login:dia": "tsx src/cli/login.ts --from dia",
+    "login:chrome": "tsx src/cli/login.ts --from chrome"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "license": "MIT"
+}
